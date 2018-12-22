@@ -1,25 +1,18 @@
 import React from 'react'
-import { Input, Item } from 'native-base'
-import Location from '../Types/Location'
-import { geocoder } from '../Services/GeocoderService'
+import { Input } from 'native-base'
 
 interface SearchLocationInputProps {
-  onSearchResult: (locations: Location[]) => void
+  searchLocations: (name: string) => void
 }
+
 export default class SearchLocationInput extends React.Component<SearchLocationInputProps> {
-  async onChange(text: string) {
-    let locations: Location[] = []
-    const { onSearchResult } = this.props
-    if (text.length > 2) {
-      locations = await geocoder.searchByName(text)
-    }
-
-    onSearchResult(locations)
-  }
-
   render() {
+    const { searchLocations } = this.props
     return (
-      <Input placeholder="Search location or city" onChangeText={(text: string) => this.onChange(text)} />
+      <Input
+        placeholder="Search location or city"
+        onChangeText={(text: string) => searchLocations(text)}
+      />
     )
   }
 }

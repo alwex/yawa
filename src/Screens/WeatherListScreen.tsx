@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {
   Body,
   Button,
@@ -13,15 +14,17 @@ import {
 } from 'native-base'
 import { NavigationScreenProps } from 'react-navigation'
 import Location from '../Types/Location'
+import { AppState } from '../Redux'
 
-interface WeatherListScreenProps extends NavigationScreenProps {}
+interface WeatherListScreenProps extends NavigationScreenProps {
+  location?: Location
+}
 
 class WeatherListScreen extends React.Component<WeatherListScreenProps> {
-  render() {
+  renderWeatherFor(location: Location) {
     const { navigation } = this.props
-    const location: Location = navigation.getParam('location') as Location
     return (
-      <Container>
+      <>
         <Header>
           <Left />
           <Body>
@@ -31,13 +34,33 @@ class WeatherListScreen extends React.Component<WeatherListScreenProps> {
           <Right />
         </Header>
         <Content padder>
+          <Text>lat: {location.lat}</Text>
+          <Text>long: {location.lon}</Text>
           <Button onPress={() => navigation.goBack()}>
             <Text>Go back</Text>
           </Button>
         </Content>
+      </>
+    )
+  }
+
+  renderError() {
+    return null
+  }
+
+  render() {
+    const { location } = this.props
+    return (
+      <Container>
+        {location && this.renderWeatherFor(location)}
+        {!location && this.renderError()}
       </Container>
     )
   }
 }
 
-export default WeatherListScreen
+const mapStateToProps = (state: AppState) => ({
+  location: state.ui.currentLocation,
+})
+
+export default connect(mapStateToProps)(WeatherListScreen)

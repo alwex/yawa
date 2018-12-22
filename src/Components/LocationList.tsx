@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Body, Icon, Left, List, ListItem, Right, Text } from 'native-base'
 import Location from '../Types/Location'
 

@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Root } from 'native-base'
+import { Provider } from 'react-redux'
+import { store } from './Redux'
 import MainNavigation from './Navigation/MainNavigation'
 
-interface Props {}
-export default class App extends Component<Props> {
+interface AppProps {}
+
+export default class App extends React.Component<AppProps> {
   render() {
     return (
       <Root>
-        <MainNavigation />
+        <Provider store={store}>
+          <MainNavigation />
+        </Provider>
       </Root>
     )
   }

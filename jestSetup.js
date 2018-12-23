@@ -1,10 +1,13 @@
 import Enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
+import 'whatwg-fetch'
+
+global.fetch = require('jest-fetch-mock')
 
 // ----------------------------------------------------------------
 // mock fetch to enable fake http calls in tests
 // ----------------------------------------------------------------
-global.fetch = require('jest-fetch-mock')
+// global.fetch = require('jest-fetch-mock')
 
 // ----------------------------------------------------------------
 // mock the native gesture handler to run in a test environment

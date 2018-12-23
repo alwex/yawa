@@ -1,7 +1,7 @@
 import WeatherData from './WeatherData'
 
 interface WeatherResponse {
-  cod: number
+  cod: string
   message: number
   cnt: number
   list: WeatherData[]

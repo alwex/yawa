@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest --coverage --detectOpenHandles",
+    "test": "jest --detectOpenHandles",
     "pretty": "prettier --write --tab-width 2 \"src/**/*.{jsx,tsx}\"",
     "tsc": "tsc"
   },
@@ -75,7 +75,8 @@
       "ts-jest": {
         "tsConfigFile": "tsconfig.jest.json"
       },
-      "window": true
+      "window": true,
+      "global": true
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [

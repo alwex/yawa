@@ -10,7 +10,7 @@ export default StyleSheet.create({
     marginTop: '50%',
   },
   row: {
-    height: 120,
+    height: 200,
   },
   icon: { fontSize: 100, color: lightTextColor },
   description: { color: lightTextColor, fontSize: 20 },

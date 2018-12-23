@@ -22,6 +22,7 @@ import WeatherList from '../Components/WeatherList'
 import Loader from '../Components/Loader'
 import ErrorContent from '../Components/ErrorContent'
 import { uiActions } from '../Redux/UIRedux'
+import { primaryColor } from '../Theme/Variables'
 
 interface WeatherListScreenProps extends NavigationScreenProps {
   location?: Location
@@ -44,7 +45,7 @@ class WeatherListScreen extends React.Component<WeatherListScreenProps> {
         <Header>
           <Left>
             <Button transparent onPress={() => navigation.goBack()}>
-              <Icon name="arrow-back" />
+              <Icon name="arrow-back" style={{ color: primaryColor }} />
             </Button>
           </Left>
           <Body>

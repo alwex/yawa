@@ -11,6 +11,7 @@
     "date-fns": "^2.0.0-alpha.26",
     "date-fns-timezone": "^0.1.4",
     "date-fns-tz": "^0.1.2",
+    "intl": "^1.2.5",
     "moment": "^2.23.0",
     "native-base": "^2.9.3",
     "normalizr": "^3.3.0",

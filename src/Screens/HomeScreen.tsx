@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Platform } from 'react-native'
 import { Container, Content, Header, Icon, Item } from 'native-base'
 import { NavigationScreenProps } from 'react-navigation'
 import SearchLocationInput from '../Components/SearchLocationInput'
@@ -11,7 +12,8 @@ import { AppState } from '../Redux'
 import { locationActions, LocationState } from '../Redux/LocationRedux'
 import { Dispatch } from 'redux'
 import { uiActions } from '../Redux/UIRedux'
-import WeatherDetails from '../Components/WeatherDetails'
+import { secondaryColor, androidStatusBarColor } from '../Theme/Variables'
+import style from '../Components/Styles/HeaderStyle'
 
 interface HomeScreenProps extends NavigationScreenProps {
   locationState: LocationState
@@ -38,13 +40,7 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
   }
 
   renderEmptyLocationList() {
-    return (
-      <EmptyContent
-        iconName="weather-windy"
-        iconType="MaterialCommunityIcons"
-        text="Search for a location"
-      />
-    )
+    return <EmptyContent iconName="weather-windy" iconType="MaterialCommunityIcons" text="" />
   }
 
   render() {

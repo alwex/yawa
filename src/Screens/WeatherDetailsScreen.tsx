@@ -18,6 +18,7 @@ import { NavigationScreenProps } from 'react-navigation'
 import { AppState } from '../Redux'
 import Loader from '../Components/Loader'
 import WeatherDetails from '../Components/WeatherDetails'
+import { primaryColor } from '../Theme/Variables'
 
 interface WeatherDetailsScreenProps extends NavigationScreenProps {
   location?: Location
@@ -32,7 +33,7 @@ class WeatherDetailsScreen extends React.Component<WeatherDetailsScreenProps> {
         <Header>
           <Left>
             <Button transparent onPress={() => navigation.goBack()}>
-              <Icon name="arrow-back" />
+              <Icon name="arrow-back" style={{ color: primaryColor }} />
             </Button>
           </Left>
           <Body>

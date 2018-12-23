@@ -2,7 +2,7 @@ import React from 'react'
 import { Body, Icon, Left, List, ListItem, Text, View } from 'native-base'
 import style from './Styles/WeatherDetailsStyle'
 import format from 'date-fns/format'
-import { utcToZonedTime } from 'date-fns-tz'
+import toDate from 'date-fns/toDate'
 import { translateIcon } from '../Lib/Helpers'
 
 interface WeatherDetailsProps {
@@ -34,7 +34,7 @@ export default class WeatherDetails extends React.Component<WeatherDetailsProps>
       locationSuffix,
     } = this.props
 
-    const parsedDate = utcToZonedTime(new Date(`${date}Z`), 'Pacific/Auckland')
+    const parsedDate = toDate(`${date}Z`)
     const dayOfYear = format(parsedDate, 'dd', { awareOfUnicodeTokens: true })
     const dayOfWeek = format(parsedDate, 'iiii', { awareOfUnicodeTokens: true })
     const time = format(parsedDate, 'p', { awareOfUnicodeTokens: true })
@@ -43,22 +43,20 @@ export default class WeatherDetails extends React.Component<WeatherDetailsProps>
       <View>
         <View style={style.container}>
           <View style={{ alignItems: 'center' }}>
+            <View style={style.locationRow}>
+              <Text style={style.location}>{locationName.toUpperCase()}</Text>
+              <Text style={style.location}>{locationSuffix.toUpperCase()}</Text>
+            </View>
             <Text style={style.dayOfWeek}>
               {dayOfWeek.toUpperCase()} {dayOfYear}
             </Text>
             <Text style={style.time}>{time}</Text>
             <Icon style={style.icon} type="MaterialCommunityIcons" name={translateIcon(iconCode)} />
-            <View style={style.locationRow}>
-              <Text style={style.location}>{locationName.toUpperCase()}</Text>
-              <Text style={style.location}>{locationSuffix.toUpperCase()}</Text>
-            </View>
             <Text style={style.descriptionText}>{description.toUpperCase()}</Text>
             <Text style={style.temp}>{temp}°</Text>
           </View>
         </View>
-        <View
-          style={style.dataContainer}
-        >
+        <View style={style.dataContainer}>
           <List>
             <ListItem icon>
               <Left>

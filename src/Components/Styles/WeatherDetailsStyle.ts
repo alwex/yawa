@@ -1,11 +1,5 @@
 import { StyleSheet } from 'react-native'
-import {
-  textColor,
-  primaryColor,
-  secondaryColor,
-  dayOfYearColor,
-  lightTextColor,
-} from '../../Theme/Variables'
+import { dayOfYearColor, primaryColor, secondaryColor, textColor } from '../../Theme/Variables'
 
 const tempSize = 50
 const iconSize = 150
@@ -21,8 +15,8 @@ export default StyleSheet.create({
     paddingBottom: 10,
   },
   icon: { color: primaryColor, fontSize: iconSize },
-  descriptionText: { color: primaryColor, fontSize: 30, fontWeight: 'bold' },
-  locationRow: { marginBottom: 10, flex: 1, flexDirection: 'column', justifyContent: 'center' },
+  descriptionText: { color: primaryColor, fontSize: 30, fontWeight: 'bold', marginBottom: 10 },
+  locationRow: { marginBottom: 20, flex: 1, flexDirection: 'column', justifyContent: 'center' },
   location: {
     alignSelf: 'center',
     fontSize: textSize,

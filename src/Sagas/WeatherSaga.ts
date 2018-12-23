@@ -4,6 +4,7 @@ import { weather } from '../Services/WeatherService'
 import { AppState } from '../Redux'
 import WeatherData from '../Types/WeatherData'
 import Location from '../Types/Location'
+import { showMessage } from '../Lib/Helpers'
 
 const currentLocationSelector = (state: AppState) => state.ui.currentLocation
 
@@ -17,6 +18,7 @@ function* fetchWeather() {
     const weatherData: WeatherData[] = yield call(weather.findforLocation, location)
     yield put(weatherActions.success(weatherData))
   } catch (error) {
-    yield call(weatherActions.failure)
+    showMessage('No connection available')
+    yield put(weatherActions.failure())
   }
 }

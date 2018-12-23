@@ -1,3 +1,5 @@
+import { Toast } from "native-base";
+
 export const translateIcon = (iconCode: string): string => {
   switch (iconCode) {
     // day
@@ -22,4 +24,8 @@ export const translateIcon = (iconCode: string): string => {
     case '50n': return 'weather-fog'
     default: return 'weather-sunny'
   }
+}
+
+export const showMessage = (text:string) => {
+  Toast.show({text: text})
 }

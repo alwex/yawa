@@ -14,7 +14,7 @@ export default class EmptyContent extends React.Component<EmptyContentProps> {
     const { iconType, iconName, text } = this.props
     return (
       <View style={style.container}>
-          <View>
+          <View style={style.row}>
             <Icon style={style.icon} name={iconName} type={iconType} />
           </View>
           <View>

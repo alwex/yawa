@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Content, Header, Icon, Item, List, ListItem } from 'native-base'
+import { Container, Content, Header, Icon, Item } from 'native-base'
 import { NavigationScreenProps } from 'react-navigation'
 import SearchLocationInput from '../Components/SearchLocationInput'
 import LocationList from '../Components/LocationList'
@@ -16,6 +16,8 @@ interface HomeScreenProps extends NavigationScreenProps {
   locationState: LocationState
   searchLocations: (name: string) => void
   selectLocation: (location: Location) => void
+  fetching: boolean
+  error: boolean
 }
 
 interface HomeScreenState {}
@@ -36,7 +38,11 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
 
   renderEmptyLocationList() {
     return (
-      <EmptyContent iconName="location-city" iconType="MaterialIcons" text="Search for a location" />
+      <EmptyContent
+        iconName="weather-windy"
+        iconType="MaterialCommunityIcons"
+        text="Search for a location"
+      />
     )
   }
 
@@ -47,6 +53,14 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
       (location: Location) =>
         [LocationType.city, LocationType.county, LocationType.state].indexOf(location.type) > -1
     )
+    const locationsFound = locations.length > 0
+
+    let content = null
+    if (locationsFound) {
+      content = this.renderLocationList(citiesOnly)
+    } else {
+      content = this.renderEmptyLocationList()
+    }
 
     return (
       <Container>
@@ -54,13 +68,10 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
           <Item>
             <Icon name="ios-search" />
             <SearchLocationInput searchLocations={searchLocations} />
-            <Icon type="MaterialIcons" name="location-city" />
+            <Icon type="EvilIcons" name="location" />
           </Item>
         </Header>
-        <Content scrollEnabled={locations.length > 0}>
-          {locations.length > 0 && this.renderLocationList(citiesOnly)}
-          {locations.length === 0 && this.renderEmptyLocationList()}
-        </Content>
+        <Content scrollEnabled={locationsFound}>{content}</Content>
       </Container>
     )
   }
@@ -68,6 +79,8 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
 
 const mapStateToProps = (state: AppState) => ({
   locationState: state.locations,
+  fetching: state.locations.fetching,
+  error: state.locations.error,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

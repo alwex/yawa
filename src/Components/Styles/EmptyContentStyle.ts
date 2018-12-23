@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { lightTextColor, textColor } from '../../Theme/Variables'
+import { lightTextColor } from '../../Theme/Variables'
 
 export default StyleSheet.create({
   container: {
@@ -7,7 +7,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    marginTop: '60%',
+    marginTop: '50%',
+  },
+  row: {
+    height: 120,
   },
   icon: { fontSize: 100, color: lightTextColor },
   description: { color: lightTextColor, fontSize: 20 },

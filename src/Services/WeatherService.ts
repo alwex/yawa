@@ -18,7 +18,6 @@ class WeatherService {
       const weather = (await weatherResult.json()) as WeatherResponse
       result = weather.list
     } catch (error) {
-      console.error(error)
       throw error
     }
 

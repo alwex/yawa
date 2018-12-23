@@ -12,7 +12,6 @@ class GeocoderService {
       const suggestions = await suggestionResult.json()
       result = suggestions.results as Location[]
     } catch (error) {
-      console.error(error)
       throw error
     }
 

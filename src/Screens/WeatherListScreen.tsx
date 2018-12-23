@@ -10,7 +10,6 @@ import {
   Left,
   Right,
   Subtitle,
-  Text,
   Title,
 } from 'native-base'
 import { NavigationScreenProps } from 'react-navigation'
@@ -20,11 +19,15 @@ import { Dispatch } from 'redux'
 import { weatherActions } from '../Redux/WeatherRedux'
 import WeatherData from '../Types/WeatherData'
 import WeatherList from '../Components/WeatherList'
+import Loader from '../Components/Loader'
+import ErrorContent from "../Components/ErrorContent";
 
 interface WeatherListScreenProps extends NavigationScreenProps {
   location?: Location
   forecasts: WeatherData[]
   loadWeather: () => void
+  fetching: boolean
+  error: boolean
 }
 
 class WeatherListScreen extends React.Component<WeatherListScreenProps> {
@@ -55,24 +58,27 @@ class WeatherListScreen extends React.Component<WeatherListScreenProps> {
     )
   }
 
-  renderError() {
-    return null
-  }
-
   render() {
-    const { location } = this.props
-    return (
-      <Container>
-        {location && this.renderWeatherFor(location)}
-        {!location && this.renderError()}
-      </Container>
-    )
+    const { location, fetching, error } = this.props
+
+    let content = null
+    if (fetching) {
+      content = <Loader />
+    } else if (error) {
+      content = <ErrorContent onRetry={() => this.props.loadWeather()} />
+    } else if (location) {
+      content = this.renderWeatherFor(location)
+    }
+
+    return <Container>{content}</Container>
   }
 }
 
 const mapStateToProps = (state: AppState) => ({
   location: state.ui.currentLocation,
   forecasts: state.weather.forecasts,
+  fetching: state.weather.fetching,
+  error: state.weather.error,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

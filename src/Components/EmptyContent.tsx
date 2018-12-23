@@ -1,20 +1,25 @@
 import React from 'react'
-import { View, Text, H1 } from 'native-base'
+import { View, Text, Icon } from 'native-base'
+import style from './Styles/EmptyContentStyle'
+import IconType from '../Types/IconType'
 
 interface EmptyContentProps {
-  icon: JSX.Element
+  iconName: string
+  iconType: IconType
   text: string
 }
 
 export default class EmptyContent extends React.Component<EmptyContentProps> {
   render() {
-    const { icon, text } = this.props
+    const { iconType, iconName, text } = this.props
     return (
-      <View>
-        <View>{icon}</View>
-        <View>
-          <H1>{text}</H1>
-        </View>
+      <View style={style.container}>
+          <View>
+            <Icon style={style.icon} name={iconName} type={iconType} />
+          </View>
+          <View>
+            <Text style={style.description}>{text}</Text>
+          </View>
       </View>
     )
   }

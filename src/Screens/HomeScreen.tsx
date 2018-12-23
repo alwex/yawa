@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Content, Header, Icon, Item } from 'native-base'
+import { Container, Content, Header, Icon, Item, List, ListItem } from 'native-base'
 import { NavigationScreenProps } from 'react-navigation'
 import SearchLocationInput from '../Components/SearchLocationInput'
 import LocationList from '../Components/LocationList'
@@ -36,15 +36,12 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
 
   renderEmptyLocationList() {
     return (
-      <EmptyContent
-        icon={<Icon type="MaterialIcons" name="location-city" />}
-        text="Nothing to display"
-      />
+      <EmptyContent iconName="location-city" iconType="MaterialIcons" text="Search for a location" />
     )
   }
 
   render() {
-    const { navigation, searchLocations } = this.props
+    const { searchLocations } = this.props
     const locations = this.props.locationState.locations
     const citiesOnly = locations.filter(
       (location: Location) =>
@@ -60,7 +57,7 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
             <Icon type="MaterialIcons" name="location-city" />
           </Item>
         </Header>
-        <Content>
+        <Content scrollEnabled={locations.length > 0}>
           {locations.length > 0 && this.renderLocationList(citiesOnly)}
           {locations.length === 0 && this.renderEmptyLocationList()}
         </Content>

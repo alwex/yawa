@@ -6,6 +6,7 @@ import {
   Container,
   Content,
   Header,
+  Icon,
   Left,
   Right,
   Subtitle,
@@ -15,30 +16,40 @@ import {
 import { NavigationScreenProps } from 'react-navigation'
 import Location from '../Types/Location'
 import { AppState } from '../Redux'
+import { Dispatch } from 'redux'
+import { weatherActions } from '../Redux/WeatherRedux'
+import WeatherData from '../Types/WeatherData'
+import WeatherList from '../Components/WeatherList'
 
 interface WeatherListScreenProps extends NavigationScreenProps {
   location?: Location
+  forecasts: WeatherData[]
+  loadWeather: () => void
 }
 
 class WeatherListScreen extends React.Component<WeatherListScreenProps> {
+  componentDidMount(): void {
+    this.props.loadWeather()
+  }
+
   renderWeatherFor(location: Location) {
-    const { navigation } = this.props
+    const { navigation, forecasts } = this.props
     return (
       <>
         <Header>
-          <Left />
+          <Left>
+            <Button transparent onPress={() => navigation.goBack()}>
+              <Icon name="arrow-back" />
+            </Button>
+          </Left>
           <Body>
             <Title>Forecasts</Title>
             <Subtitle>{location.name}</Subtitle>
           </Body>
           <Right />
         </Header>
-        <Content padder>
-          <Text>lat: {location.lat}</Text>
-          <Text>long: {location.lon}</Text>
-          <Button onPress={() => navigation.goBack()}>
-            <Text>Go back</Text>
-          </Button>
+        <Content>
+          <WeatherList onPress={() => {}} location={location} forecasts={forecasts} />
         </Content>
       </>
     )
@@ -61,6 +72,14 @@ class WeatherListScreen extends React.Component<WeatherListScreenProps> {
 
 const mapStateToProps = (state: AppState) => ({
   location: state.ui.currentLocation,
+  forecasts: state.weather.forecasts,
 })
 
-export default connect(mapStateToProps)(WeatherListScreen)
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  loadWeather: () => dispatch(weatherActions.request()),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WeatherListScreen)

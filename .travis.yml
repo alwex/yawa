@@ -4,4 +4,5 @@ node_js:
 before_script:
   - yarn install
 script:
-  - TZ=Pacific/Auckland npm run test -- --coverage
+  - TZ=Pacific/Auckland jest
+  - cat coverage/lcov.info | coveralls

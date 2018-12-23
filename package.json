@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "pretty": "prettier --write --tab-width 2 \"src/**/*.{jsx,tsx}\""
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.{jsx,tsx}\"",
+    "tsc": "tsc"
   },
   "dependencies": {
     "date-fns": "^2.0.0-alpha.26",

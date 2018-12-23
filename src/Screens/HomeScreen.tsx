@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Platform } from 'react-native'
 import { Container, Content, Header, Icon, Item } from 'native-base'
 import { NavigationScreenProps } from 'react-navigation'
 import SearchLocationInput from '../Components/SearchLocationInput'
@@ -12,13 +11,13 @@ import { AppState } from '../Redux'
 import { locationActions, LocationState } from '../Redux/LocationRedux'
 import { Dispatch } from 'redux'
 import { uiActions } from '../Redux/UIRedux'
-import { secondaryColor, androidStatusBarColor } from '../Theme/Variables'
-import style from '../Components/Styles/HeaderStyle'
+import { weatherActions } from '../Redux/WeatherRedux'
 
 interface HomeScreenProps extends NavigationScreenProps {
   locationState: LocationState
   searchLocations: (name: string) => void
   selectLocation: (location: Location) => void
+  clearWeatherStore: () => void
   fetching: boolean
   error: boolean
 }
@@ -27,13 +26,14 @@ interface HomeScreenState {}
 
 class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
   renderLocationList(locations: Location[]) {
-    const { navigation, selectLocation } = this.props
+    const { navigation, selectLocation, clearWeatherStore } = this.props
     return (
       <LocationList
         locations={locations}
         onLocationPress={(location: Location) => {
+          clearWeatherStore()
           selectLocation(location)
-          navigation.navigate('WeatherListScreen')
+          navigation.navigate('WeatherListScreen', { key: 'weather-list' })
         }}
       />
     )
@@ -46,6 +46,10 @@ class HomeScreen extends React.Component<HomeScreenProps, HomeScreenState> {
   render() {
     const { searchLocations } = this.props
     const locations = this.props.locationState.locations
+    // remove non cities from the list of locations
+    // as the OSM geocoder service is still in beta,
+    // it does not recognize NZ cities as cities, but as county and state
+    // which is why we keep these two types along with the cities
     const citiesOnly = locations.filter(
       (location: Location) =>
         [LocationType.city, LocationType.county, LocationType.state].indexOf(location.type) > -1
@@ -83,6 +87,7 @@ const mapStateToProps = (state: AppState) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   searchLocations: (name: string) => dispatch(locationActions.search(name)),
   selectLocation: (location: Location) => dispatch(uiActions.selectCurrentLocation(location)),
+  clearWeatherStore: () => dispatch(weatherActions.success([])),
 })
 
 export default connect(

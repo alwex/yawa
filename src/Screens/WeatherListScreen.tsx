@@ -23,6 +23,8 @@ import Loader from '../Components/Loader'
 import ErrorContent from '../Components/ErrorContent'
 import { uiActions } from '../Redux/UIRedux'
 import { primaryColor } from '../Theme/Variables'
+import CancellablePromise from '../Types/react-native-addons/CancellablePromise'
+import { InteractionManager } from 'react-native'
 
 interface WeatherListScreenProps extends NavigationScreenProps {
   location?: Location
@@ -34,42 +36,36 @@ interface WeatherListScreenProps extends NavigationScreenProps {
 }
 
 class WeatherListScreen extends React.Component<WeatherListScreenProps> {
+  loadWeatherHandle: CancellablePromise | undefined
+
   componentDidMount(): void {
-    this.props.loadWeather()
+    this.loadWeatherHandle = InteractionManager.runAfterInteractions(() => this.props.loadWeather())
+  }
+
+  componentWillUnmount(): void {
+    if (this.loadWeatherHandle !== undefined) {
+      this.loadWeatherHandle.cancel()
+    }
   }
 
   renderWeatherFor(location: Location) {
     const { navigation, forecasts, selectForecast } = this.props
     return (
-      <>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => navigation.goBack()}>
-              <Icon name="arrow-back" style={{ color: primaryColor }} />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Forecasts</Title>
-            <Subtitle>{location.name}</Subtitle>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
-          <WeatherList
-            onPress={(forecast: WeatherData) => {
-              selectForecast(forecast)
-              navigation.navigate('WeatherDetailsScreen')
-            }}
-            location={location}
-            forecasts={forecasts}
-          />
-        </Content>
-      </>
+      <Content>
+        <WeatherList
+          onPress={(forecast: WeatherData) => {
+            selectForecast(forecast)
+            navigation.navigate('WeatherDetailsScreen')
+          }}
+          location={location}
+          forecasts={forecasts}
+        />
+      </Content>
     )
   }
 
   render() {
-    const { location, fetching, error } = this.props
+    const { navigation, location, fetching, error } = this.props
 
     let content = null
     if (fetching) {
@@ -80,7 +76,23 @@ class WeatherListScreen extends React.Component<WeatherListScreenProps> {
       content = this.renderWeatherFor(location)
     }
 
-    return <Container>{content}</Container>
+    return (
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent onPress={() => navigation.goBack()}>
+              <Icon name="arrow-back" style={{ color: primaryColor }} />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Forecasts</Title>
+            <Subtitle>{location ? location.name : ''}</Subtitle>
+          </Body>
+          <Right />
+        </Header>
+        {content}
+      </Container>
+    )
   }
 }
 

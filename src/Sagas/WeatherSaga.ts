@@ -18,6 +18,7 @@ function* fetchWeather() {
     const weatherData: WeatherData[] = yield call(weather.findforLocation, location)
     yield put(weatherActions.success(weatherData))
   } catch (error) {
+    console.error(error)
     showMessage('No connection available')
     yield put(weatherActions.failure())
   }

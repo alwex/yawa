@@ -18,6 +18,7 @@ function* fetchLocations(input: AnyAction) {
     }
     yield put(locationActions.success(locations))
   } catch (error) {
+    console.error(error)
     showMessage('No connection available')
     yield put(locationActions.failure())
   }

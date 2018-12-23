@@ -4,6 +4,7 @@ node_js:
 before_script:
   - echo 'Pacific/Auckland' | sudo tee /etc/timezone
   - sudo dpkg-reconfigure --frontend noninteractive tzdata
+  - sudo ntpdate ntp.ubuntu.com
   - yarn install
 script:
   - npm run test -- --coverage

@@ -4,5 +4,5 @@ node_js:
 before_script:
   - yarn install
 script:
-  - TZ=Pacific/Auckland jest
+  - TZ=Pacific/Auckland jest --forceExit --detectOpenHandles
   - cat coverage/lcov.info | coveralls

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "jest --coverage --detectOpenHandles",
     "pretty": "prettier --write --tab-width 2 \"src/**/*.{jsx,tsx}\"",
     "tsc": "tsc"
   },
@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@types/date-fns": "^2.6.0",
+    "@types/enzyme": "^3.1.15",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.10",
     "@types/react": "^16.7.18",
     "@types/react-native": "^0.57.20",
@@ -36,13 +38,59 @@
     "@types/react-test-renderer": "^16.0.3",
     "@types/redux": "^3.6.0",
     "babel-jest": "23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "husky": "^1.2.1",
     "jest": "23.6.0",
+    "jest-fetch-mock": "^2.1.0",
+    "lint-staged": "^8.1.0",
     "metro-react-native-babel-preset": "0.51.0",
     "prettier": "^1.15.3",
+    "react-dom": "^16.7.0",
     "react-test-renderer": "16.6.3",
+    "ts-jest": "^23.10.5",
     "typescript": "^3.2.2"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base-shoutem-theme|@shoutem/animation|@shoutem/ui|tcomb-form-native|react-navigation)"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.jest.json"
+      },
+      "window": true
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "setupFiles": [
+      "./jestSetup.js"
+    ]
   }
 }

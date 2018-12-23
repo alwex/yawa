@@ -11,6 +11,7 @@ import { AppState } from '../Redux'
 import { locationActions, LocationState } from '../Redux/LocationRedux'
 import { Dispatch } from 'redux'
 import { uiActions } from '../Redux/UIRedux'
+import WeatherDetails from '../Components/WeatherDetails'
 
 interface HomeScreenProps extends NavigationScreenProps {
   locationState: LocationState

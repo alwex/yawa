@@ -4,9 +4,10 @@ import { Badge, Icon, Text, View } from 'native-base'
 import toDate from 'date-fns/toDate'
 import format from 'date-fns/format'
 import style from './Styles/WeatherItemStyle'
-import { translateIcon } from "../Lib/Helpers";
+import { translateIcon } from '../Lib/Helpers'
 
 interface WeatherItemProps {
+  onPress: () => void
   date: string
   temp: number
   humidity: number
@@ -17,13 +18,13 @@ interface WeatherItemProps {
 
 export default class WeatherItem extends React.Component<WeatherItemProps> {
   render() {
-    const { date, temp, description, iconCode, locationName, humidity } = this.props
+    const { date, temp, description, iconCode, locationName, humidity, onPress } = this.props
     const parsedDate = toDate(date)
     const dayOfYear = format(parsedDate, 'dd', { awareOfUnicodeTokens: true })
     const dayOfWeek = format(parsedDate, 'iii', { awareOfUnicodeTokens: true })
     const time = format(parsedDate, 'p', { awareOfUnicodeTokens: true })
     return (
-      <TouchableOpacity style={style.container}>
+      <TouchableOpacity style={style.container} onPress={onPress}>
         <View style={style.mainRow}>
           <View>
             <View>
@@ -42,7 +43,11 @@ export default class WeatherItem extends React.Component<WeatherItemProps> {
           <View>
             <View>
               <Badge style={style.humidityBadge}>
-                <Icon name="drop" type="Entypo" style={style.humidityBadgeContent} />
+                <Icon
+                  type="MaterialCommunityIcons"
+                  name="water"
+                  style={style.humidityBadgeContent}
+                />
                 <Text>{humidity}%</Text>
               </Badge>
             </View>

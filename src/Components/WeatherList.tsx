@@ -5,19 +5,20 @@ import WeatherItem from './WeatherItem'
 import Location from '../Types/Location'
 
 interface WeatherListProps {
-  onPress: () => void
+  onPress: (forecast: WeatherData) => void
   forecasts: WeatherData[]
   location: Location
 }
 
 export default class WeatherList extends React.Component<WeatherListProps> {
   render() {
-    const { forecasts, location } = this.props
+    const { forecasts, location, onPress } = this.props
     return (
       <List>
         {forecasts.map((forecast: WeatherData) => (
           <ListItem key={forecast.dt}>
             <WeatherItem
+              onPress={() => onPress(forecast)}
               date={forecast.dt_txt}
               temp={parseInt(forecast.main.temp.toFixed(0))}
               humidity={forecast.main.humidity}

@@ -14,12 +14,12 @@ export default class EmptyContent extends React.Component<EmptyContentProps> {
     const { iconType, iconName, text } = this.props
     return (
       <View style={style.container}>
-          <View style={style.row}>
-            <Icon style={style.icon} name={iconName} type={iconType} />
-          </View>
-          <View>
-            <Text style={style.description}>{text}</Text>
-          </View>
+        <View style={style.row}>
+          <Icon style={style.icon} name={iconName} type={iconType} />
+        </View>
+        <View>
+          <Text style={style.description}>{text}</Text>
+        </View>
       </View>
     )
   }

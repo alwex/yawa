@@ -9,7 +9,7 @@ export default StyleSheet.create({
   container: { flex: 1 },
   mainRow: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' },
   temp: { fontSize: tempSize, color: textColor },
-  icon: { color: '#D6637A', fontSize: iconSize },
+  icon: { color: primaryColor, fontSize: iconSize },
   humidityBadge: { flexDirection: 'row', backgroundColor: primaryColor, alignSelf: 'center' },
   humidityBadgeContent: { color: 'white', fontSize: 14, alignSelf: 'center' },
   description: {

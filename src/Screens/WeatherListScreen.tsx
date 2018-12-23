@@ -20,12 +20,14 @@ import { weatherActions } from '../Redux/WeatherRedux'
 import WeatherData from '../Types/WeatherData'
 import WeatherList from '../Components/WeatherList'
 import Loader from '../Components/Loader'
-import ErrorContent from "../Components/ErrorContent";
+import ErrorContent from '../Components/ErrorContent'
+import { uiActions } from '../Redux/UIRedux'
 
 interface WeatherListScreenProps extends NavigationScreenProps {
   location?: Location
   forecasts: WeatherData[]
   loadWeather: () => void
+  selectForecast: (forecast: WeatherData) => void
   fetching: boolean
   error: boolean
 }
@@ -36,7 +38,7 @@ class WeatherListScreen extends React.Component<WeatherListScreenProps> {
   }
 
   renderWeatherFor(location: Location) {
-    const { navigation, forecasts } = this.props
+    const { navigation, forecasts, selectForecast } = this.props
     return (
       <>
         <Header>
@@ -52,7 +54,14 @@ class WeatherListScreen extends React.Component<WeatherListScreenProps> {
           <Right />
         </Header>
         <Content>
-          <WeatherList onPress={() => {}} location={location} forecasts={forecasts} />
+          <WeatherList
+            onPress={(forecast: WeatherData) => {
+              selectForecast(forecast)
+              navigation.navigate('WeatherDetailsScreen')
+            }}
+            location={location}
+            forecasts={forecasts}
+          />
         </Content>
       </>
     )
@@ -83,6 +92,7 @@ const mapStateToProps = (state: AppState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadWeather: () => dispatch(weatherActions.request()),
+  selectForecast: (forecast: WeatherData) => dispatch(uiActions.selectCurrentForecast(forecast)),
 })
 
 export default connect(

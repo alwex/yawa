@@ -12,10 +12,10 @@ export default class ErrorContent extends React.Component<ErrorContentProps> {
     return (
       <View style={style.container}>
         <Text style={style.description}>Oups!</Text>
-        <View  style={style.button}>
-        <Button onPress={onRetry}>
-          <Text>Retry</Text>
-        </Button>
+        <View style={style.button}>
+          <Button onPress={onRetry}>
+            <Text>Retry</Text>
+          </Button>
         </View>
       </View>
     )

@@ -105,6 +105,11 @@ describe('WeatherService', () => {
 
     const response: WeatherData[] = await weather.findforLocation(location1)
 
+    expect(global.fetch.mock.calls.length).toEqual(1)
+    expect(global.fetch.mock.calls[0][0]).toEqual(
+      'https://weather.com/data/2.5/forecast?cnt=100&APPID=weatherapikey&lat=37.2065392&lon=-77.4369278&units=metric'
+    )
+
     expect(response.length).toEqual(2)
     expect(response[0]).toEqual(forecast1)
     expect(response[1]).toEqual(forecast2)

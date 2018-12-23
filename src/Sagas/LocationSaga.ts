@@ -8,7 +8,7 @@ export function* watchLocationInput() {
   yield throttle(500, SEARCH_LOCATION_CHANGE, fetchLocations)
 }
 
-function* fetchLocations(input: AnyAction) {
+export function* fetchLocations(input: AnyAction) {
   const name: string = input.payload
   try {
     yield put(locationActions.request())
@@ -18,7 +18,6 @@ function* fetchLocations(input: AnyAction) {
     }
     yield put(locationActions.success(locations))
   } catch (error) {
-    console.error(error)
     showMessage('No connection available')
     yield put(locationActions.failure())
   }

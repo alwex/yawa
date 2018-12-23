@@ -38,11 +38,14 @@ describe('GeocoderService', () => {
       results: [location1, location2],
     }
 
+    const searchText = 'duned'
     global.fetch.mockResponse(() => Promise.resolve({ body: JSON.stringify(responseBody) }))
-    const response: Location[] = await geocoder.searchByName('duned')
+    const response: Location[] = await geocoder.searchByName(searchText)
 
     expect(global.fetch.mock.calls.length).toEqual(1)
-    expect(global.fetch.mock.calls[0][0]).toEqual('https://geocoder.com/q/duned.js?key=apikey')
+    expect(global.fetch.mock.calls[0][0]).toEqual(
+      `https://geocoder.com/q/${searchText}.js?key=geocoderapikey`
+    )
 
     expect(response.length).toEqual(2)
     expect(response[0]).toEqual(location1)

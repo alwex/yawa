@@ -1,10 +1,10 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import { Badge, Icon, Text, View } from 'native-base'
-import toDate from 'date-fns/toDate'
 import format from 'date-fns/format'
 import style from './Styles/WeatherItemStyle'
 import { translateIcon } from '../Lib/Helpers'
+import { utcToZonedTime } from 'date-fns-tz'
 
 interface WeatherItemProps {
   onPress: () => void
@@ -19,7 +19,9 @@ interface WeatherItemProps {
 export default class WeatherItem extends React.Component<WeatherItemProps> {
   render() {
     const { date, temp, description, iconCode, locationName, humidity, onPress } = this.props
-    const parsedDate = toDate(date)
+    const parsedDate = utcToZonedTime(new Date(`${date}Z`), 'Pacific/Auckland')
+    console.log(parsedDate.toString())
+
     const dayOfYear = format(parsedDate, 'dd', { awareOfUnicodeTokens: true })
     const dayOfWeek = format(parsedDate, 'iii', { awareOfUnicodeTokens: true })
     const time = format(parsedDate, 'p', { awareOfUnicodeTokens: true })

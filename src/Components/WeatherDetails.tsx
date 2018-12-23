@@ -1,11 +1,9 @@
 import React from 'react'
 import { Body, Icon, Left, List, ListItem, Text, View } from 'native-base'
 import style from './Styles/WeatherDetailsStyle'
-import toDate from 'date-fns/toDate'
 import format from 'date-fns/format'
+import { utcToZonedTime } from 'date-fns-tz'
 import { translateIcon } from '../Lib/Helpers'
-import { primaryColor } from '../Theme/Variables'
-import { ImageBackground } from 'react-native'
 
 interface WeatherDetailsProps {
   date: string
@@ -35,7 +33,8 @@ export default class WeatherDetails extends React.Component<WeatherDetailsProps>
       locationName,
       locationSuffix,
     } = this.props
-    const parsedDate = toDate(date)
+
+    const parsedDate = utcToZonedTime(new Date(`${date}Z`), 'Pacific/Auckland')
     const dayOfYear = format(parsedDate, 'dd', { awareOfUnicodeTokens: true })
     const dayOfWeek = format(parsedDate, 'iiii', { awareOfUnicodeTokens: true })
     const time = format(parsedDate, 'p', { awareOfUnicodeTokens: true })
@@ -57,15 +56,8 @@ export default class WeatherDetails extends React.Component<WeatherDetailsProps>
             <Text style={style.temp}>{temp}°</Text>
           </View>
         </View>
-
         <View
-          style={{
-            backgroundColor: primaryColor,
-            margin: 20,
-            borderRadius: 10,
-            paddingTop: 10,
-            paddingBottom: 10,
-          }}
+          style={style.dataContainer}
         >
           <List>
             <ListItem icon>

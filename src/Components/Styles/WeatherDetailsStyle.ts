@@ -13,6 +13,13 @@ const textSize = 12
 
 export default StyleSheet.create({
   container: { flex: 1, flexDirection: 'row', justifyContent: 'center', padding: 15 },
+  dataContainer: {
+    backgroundColor: primaryColor,
+    margin: 20,
+    borderRadius: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
   icon: { color: primaryColor, fontSize: iconSize },
   descriptionText: { color: primaryColor, fontSize: 30, fontWeight: 'bold' },
   locationRow: { marginBottom: 10, flex: 1, flexDirection: 'column', justifyContent: 'center' },

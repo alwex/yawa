@@ -71,6 +71,9 @@
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
     },
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
     "globals": {
       "ts-jest": {
         "tsConfigFile": "tsconfig.jest.json"

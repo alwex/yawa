@@ -1,0 +1,833 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherDetails render correctly 1`] = `
+<View
+  style={Object {}}
+>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "padding": 15,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "alignItems": "center",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {},
+            Object {
+              "flex": 1,
+              "flexDirection": "column",
+              "justifyContent": "center",
+              "marginBottom": 20,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000",
+                "fontFamily": "System",
+                "fontSize": 16,
+              },
+              Object {
+                "alignSelf": "center",
+                "color": "#90C7D4",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              },
+            ]
+          }
+          uppercase={false}
+        >
+          DUNEDIN
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000",
+                "fontFamily": "System",
+                "fontSize": 16,
+              },
+              Object {
+                "alignSelf": "center",
+                "color": "#90C7D4",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              },
+            ]
+          }
+          uppercase={false}
+        >
+          SOUTH ISLAND
+        </Text>
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+            },
+            Object {
+              "alignSelf": "center",
+              "color": "#90C7D4",
+              "fontSize": 30,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        TUESDAY
+         
+        25
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+            },
+            Object {
+              "alignSelf": "center",
+              "color": "#2C3A3F",
+              "fontSize": 20,
+              "fontWeight": "normal",
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        9:00 PM
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 12,
+            },
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#D6637A",
+                "fontSize": 150,
+              },
+            ],
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+        type="MaterialCommunityIcons"
+      >
+        
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "#D6637A",
+              "fontSize": 30,
+              "fontWeight": "bold",
+              "marginBottom": 10,
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        LIGHT RAIN
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "#2C3A3F",
+              "fontSize": 50,
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        12.2
+        °
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "backgroundColor": "#D6637A",
+          "borderRadius": 10,
+          "margin": 20,
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        },
+      ]
+    }
+  >
+    <View
+      closeOnRowBeginSwipe={false}
+      closeOnRowPress={true}
+      closeOnScroll={true}
+      directionalDistanceChangeThreshold={2}
+      disableLeftSwipe={false}
+      disableRightSwipe={false}
+      leftOpenValue={0}
+      previewFirstRow={false}
+      recalculateHiddenLayout={false}
+      rightOpenValue={0}
+      style={Object {}}
+      swipeToOpenPercent={50}
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          icon={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": null,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "paddingBottom": null,
+              "paddingRight": null,
+              "paddingTop": null,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flex": 0,
+                "flexDirection": "row",
+                "height": 44,
+                "justifyContent": "center",
+                "paddingRight": 15,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 30,
+                    },
+                    Object {
+                      "color": "#000",
+                      "fontSize": 28,
+                      "width": 25,
+                    },
+                    Object {
+                      "color": "white",
+                    },
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+              type="MaterialCommunityIcons"
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": null,
+                  "alignSelf": null,
+                  "borderBottomWidth": 0.5,
+                  "borderColor": "#c9c9c9",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderColor": "transparent",
+                },
+              ]
+            }
+          >
+            <Text
+              note={true}
+              style={
+                Array [
+                  Object {
+                    "color": "#808080",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "200",
+                    "marginLeft": null,
+                    "marginRight": 10,
+                  },
+                  Object {
+                    "color": "white",
+                  },
+                ]
+              }
+              uppercase={false}
+            >
+              12
+              %
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          icon={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": null,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "paddingBottom": null,
+              "paddingRight": null,
+              "paddingTop": null,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flex": 0,
+                "flexDirection": "row",
+                "height": 44,
+                "justifyContent": "center",
+                "paddingRight": 15,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 30,
+                    },
+                    Object {
+                      "color": "#000",
+                      "fontSize": 28,
+                      "width": 25,
+                    },
+                    Object {
+                      "color": "white",
+                    },
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+              type="MaterialCommunityIcons"
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": null,
+                  "alignSelf": null,
+                  "borderBottomWidth": 0.5,
+                  "borderColor": "#c9c9c9",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderColor": "transparent",
+                },
+              ]
+            }
+          >
+            <Text
+              note={true}
+              style={
+                Array [
+                  Object {
+                    "color": "#808080",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "200",
+                    "marginLeft": null,
+                    "marginRight": 10,
+                  },
+                  Object {
+                    "color": "white",
+                  },
+                ]
+              }
+              uppercase={false}
+            >
+              121 Kmph
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          icon={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": null,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "paddingBottom": null,
+              "paddingRight": null,
+              "paddingTop": null,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flex": 0,
+                "flexDirection": "row",
+                "height": 44,
+                "justifyContent": "center",
+                "paddingRight": 15,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 30,
+                    },
+                    Object {
+                      "color": "#000",
+                      "fontSize": 28,
+                      "width": 25,
+                    },
+                    Object {
+                      "color": "white",
+                    },
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+              type="MaterialCommunityIcons"
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": null,
+                  "alignSelf": null,
+                  "borderBottomWidth": 0.5,
+                  "borderColor": "#c9c9c9",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderColor": "transparent",
+                },
+              ]
+            }
+          >
+            <Text
+              note={true}
+              style={
+                Array [
+                  Object {
+                    "color": "#808080",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "200",
+                    "marginLeft": null,
+                    "marginRight": 10,
+                  },
+                  Object {
+                    "color": "white",
+                  },
+                ]
+              }
+              uppercase={false}
+            >
+              Max 
+              15.5
+              °
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          icon={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": null,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "paddingBottom": null,
+              "paddingRight": null,
+              "paddingTop": null,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flex": 0,
+                "flexDirection": "row",
+                "height": 44,
+                "justifyContent": "center",
+                "paddingRight": 15,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 30,
+                    },
+                    Object {
+                      "color": "#000",
+                      "fontSize": 28,
+                      "width": 25,
+                    },
+                    Object {
+                      "color": "white",
+                    },
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+              type="MaterialCommunityIcons"
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": null,
+                  "alignSelf": null,
+                  "borderBottomWidth": 0.5,
+                  "borderColor": "#c9c9c9",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderColor": "transparent",
+                },
+              ]
+            }
+          >
+            <Text
+              note={true}
+              style={
+                Array [
+                  Object {
+                    "color": "#808080",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "200",
+                    "marginLeft": null,
+                    "marginRight": 10,
+                  },
+                  Object {
+                    "color": "white",
+                  },
+                ]
+              }
+              uppercase={false}
+            >
+              Min 
+              9.5
+              °
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          icon={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": null,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "paddingBottom": null,
+              "paddingRight": null,
+              "paddingTop": null,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flex": 0,
+                "flexDirection": "row",
+                "height": 44,
+                "justifyContent": "center",
+                "paddingRight": 15,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 30,
+                    },
+                    Object {
+                      "color": "#000",
+                      "fontSize": 28,
+                      "width": 25,
+                    },
+                    Object {
+                      "color": "white",
+                    },
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+              type="MaterialCommunityIcons"
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": null,
+                  "alignSelf": null,
+                  "borderBottomWidth": 0.5,
+                  "borderColor": "#c9c9c9",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderColor": "transparent",
+                },
+              ]
+            }
+          >
+            <Text
+              note={true}
+              style={
+                Array [
+                  Object {
+                    "color": "#808080",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "200",
+                    "marginLeft": null,
+                    "marginRight": 10,
+                  },
+                  Object {
+                    "color": "white",
+                  },
+                ]
+              }
+              uppercase={false}
+            >
+              50.25
+               Mb
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

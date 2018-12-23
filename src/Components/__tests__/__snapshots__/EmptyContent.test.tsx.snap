@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyContent render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "marginTop": "50%",
+        "textAlign": "center",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "height": 200,
+        },
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": undefined,
+            "fontSize": 12,
+          },
+          Array [
+            Object {
+              "color": "#000",
+              "fontSize": 30,
+            },
+            Object {
+              "color": "#000",
+              "fontSize": 30,
+            },
+            Object {
+              "color": "#CECDD2",
+              "fontSize": 100,
+            },
+          ],
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+      type="MaterialCommunityIcons"
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={Object {}}
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000",
+            "fontFamily": "System",
+            "fontSize": 16,
+          },
+          Object {
+            "color": "#CECDD2",
+            "fontSize": 20,
+          },
+        ]
+      }
+      uppercase={false}
+    >
+      hello
+    </Text>
+  </View>
+</View>
+`;

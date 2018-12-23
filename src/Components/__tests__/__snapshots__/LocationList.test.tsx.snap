@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationList render correctly 1`] = `
+<View
+  closeOnRowBeginSwipe={false}
+  closeOnRowPress={true}
+  closeOnScroll={true}
+  directionalDistanceChangeThreshold={2}
+  disableLeftSwipe={false}
+  disableRightSwipe={false}
+  leftOpenValue={0}
+  previewFirstRow={false}
+  recalculateHiddenLayout={false}
+  rightOpenValue={0}
+  style={Object {}}
+  swipeToOpenPercent={50}
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+  >
+    <View
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomWidth": 0.5,
+          "borderColor": "#c9c9c9",
+          "flexDirection": "row",
+          "marginLeft": 16,
+          "paddingBottom": 13,
+          "paddingRight": 16,
+          "paddingTop": 13,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": null,
+            "alignSelf": null,
+            "flex": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+          uppercase={false}
+        >
+          Dunedin
+        </Text>
+        <Text
+          note={true}
+          style={
+            Object {
+              "color": "#808080",
+              "fontFamily": "System",
+              "fontSize": 14,
+              "fontWeight": "200",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+          uppercase={false}
+        >
+          Petersburg, Virginia
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "alignSelf": "center",
+            "flex": 0.28,
+            "paddingBottom": null,
+            "paddingLeft": null,
+            "paddingRight": null,
+            "paddingTop": null,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 12,
+              },
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 30,
+                },
+                Object {
+                  "alignSelf": null,
+                  "color": "#c9c8cd",
+                  "fontSize": 22,
+                },
+              ],
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+  >
+    <View
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomWidth": 0.5,
+          "borderColor": "#c9c9c9",
+          "flexDirection": "row",
+          "marginLeft": 16,
+          "paddingBottom": 13,
+          "paddingRight": 16,
+          "paddingTop": 13,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": null,
+            "alignSelf": null,
+            "flex": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+          uppercase={false}
+        >
+          Dunedin
+        </Text>
+        <Text
+          note={true}
+          style={
+            Object {
+              "color": "#808080",
+              "fontFamily": "System",
+              "fontSize": 14,
+              "fontWeight": "200",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+          uppercase={false}
+        >
+          North Ayrshire, Scotland
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "alignSelf": "center",
+            "flex": 0.28,
+            "paddingBottom": null,
+            "paddingLeft": null,
+            "paddingRight": null,
+            "paddingTop": null,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 12,
+              },
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 30,
+                },
+                Object {
+                  "alignSelf": null,
+                  "color": "#c9c8cd",
+                  "fontSize": 22,
+                },
+              ],
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "10"
 before_script:
-  - echo 'Pacific/Auckland' | sudo tee /etc/timezone
-  - sudo dpkg-reconfigure --frontend noninteractive tzdata
-  - date
   - yarn install
 script:
-  - npm run test -- --coverage
+  - TZ=Pacific/Auckland npm run test -- --coverage

@@ -45,4 +45,4 @@ https://facebook.github.io/react-native/docs/signed-apk-android
 react-native run-android --variant=release
 ```
 
-> IOS release build require a provisioning profile and an apple developer account
+> /!\ IOS release build requires a provisioning profile and an apple developer account

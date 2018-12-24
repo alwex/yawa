@@ -3,7 +3,7 @@
 
 # YAWA
 
-![Image of ios version](doc/ios-list.png)
+![Image of ios version](doc/ios.png)
 
 ## Technology stack
 
@@ -28,10 +28,13 @@ react-native run-android
 ## Running tests
 
 ```bash
-
+jest
 ```
 
-## Relese builds
+## Release builds
+
+Android release build require a keystore to sign the apk
+https://facebook.github.io/react-native/docs/signed-apk-android
 
 ```bash
 react-native run-android --variant=release

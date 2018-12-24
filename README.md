@@ -25,6 +25,11 @@ react-native run-ios
 react-native run-android
 ```
 
+The project is configured to take advantage of react native debugger
+https://github.com/jhen0409/react-native-debugger
+
+![Image of redux dev tool](doc/debugger.png)
+
 ## Running tests
 
 ```bash
